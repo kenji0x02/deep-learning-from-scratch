@@ -1,6 +1,6 @@
 # coding: utf-8
 import sys, os
-sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
+sys.path.append(os.curdir)  # カレントディレクトリのファイルをインポートするための設定
 import numpy as np
 from dataset.mnist import load_mnist
 from common.multi_layer_net_extend import MultiLayerNetExtend

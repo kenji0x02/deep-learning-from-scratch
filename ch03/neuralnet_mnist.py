@@ -1,6 +1,6 @@
 # coding: utf-8
 import sys, os
-sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
+sys.path.append(os.curdir)  # カレントディレクトリのファイルをインポートするための設定
 import numpy as np
 import pickle
 from dataset.mnist import load_mnist
@@ -13,7 +13,7 @@ def get_data():
 
 
 def init_network():
-    with open("sample_weight.pkl", 'rb') as f:
+    with open("./ch03/sample_weight.pkl", 'rb') as f:
         network = pickle.load(f)
     return network
 

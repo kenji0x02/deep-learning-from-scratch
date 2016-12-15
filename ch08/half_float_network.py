@@ -1,6 +1,6 @@
 # coding: utf-8
 import sys, os
-sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
+sys.path.append(os.curdir)  # カレントディレクトリのファイルをインポートするための設定
 import numpy as np
 import matplotlib.pyplot as plt
 from deep_convnet import DeepConvNet
@@ -10,7 +10,7 @@ from dataset.mnist import load_mnist
 (x_train, t_train), (x_test, t_test) = load_mnist(flatten=False)
 
 network = DeepConvNet()
-network.load_params("deep_convnet_params.pkl")
+network.load_params("./ch08/deep_convnet_params.pkl")
 
 sampled = 10000 # 高速化のため
 x_test = x_test[:sampled]

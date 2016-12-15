@@ -1,6 +1,6 @@
 # coding: utf-8
 import sys, os
-sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
+sys.path.append(os.curdir)  # カレントディレクトリのファイルをインポートするための設定
 import numpy as np
 import matplotlib.pyplot as plt
 from simple_convnet import SimpleConvNet
@@ -27,11 +27,11 @@ network = SimpleConvNet(input_dim=(1,28,28),
                         hidden_size=100, output_size=10, weight_init_std=0.01)
 
 # 学習後の重み
-network.load_params("params.pkl")
+network.load_params("./ch07/params.pkl")
 
 filter_show(network.params['W1'], 16)
 
-img = imread('../dataset/lena_gray.png')
+img = imread('./dataset/lena_gray.png')
 img = img.reshape(1, 1, *img.shape)
 
 fig = plt.figure()
