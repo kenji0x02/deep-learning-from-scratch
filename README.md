@@ -19,6 +19,19 @@
 |common     |共通で使用するソースコード   |
 |dataset    |データセット用のソースコード |
 
+### ファイル内容
+
+* `ch07/`: 畳み込みニューラルネットワーク
+    - `simple_convnet.py`: CNNのサンプル。7.5節のSimpleConvNetの実装。
+    - `train_convnet.py`: `simple_convnet.py`で定義したCNNを使ってMNISTの画像を学習。数時間かかる長い処理です。分類精度も計算。
+    - `visualize_filter.py`: SimpleConvNetの第1層目のフィルタの可視化。7.6.1項参照。
+    - `apply_filter.py`: SimpleConvNetの第1層のフィルタをかけたときの画像を表示してフィルタの効果を可視化。7.6.1節参照。
+    - `gradient_check.py`: 勾配確認。5.7.3のCNN(SimpleConvNet)バージョン。本文では特にコメントなし。
+    - `params.pkl`: 学習済みSimpleConvNetのピクルファイル。MNISTのデータ。
+
+* `common/`
+    - `layers.py`: 各層の定義(Rule, Sigmoid, Affine, SoftmaxWithLoss, Dropout, BatchNormalization, Convolution, Pooling)。いずれの層もfoward, backward関数が定義されている。ConvolutionとPoolingでは`util.py`で定義されているim2col, col2imを使用。
+    - `util.py`: CNNの実装で必須になるim2col, col2imが定義されている。
 
 ソースコードの解説は本書籍をご覧ください。
 
