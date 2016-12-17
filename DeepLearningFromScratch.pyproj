@@ -80,6 +80,7 @@
     <Compile Include="ch06\weight_init_compare.py" />
     <Compile Include="ch07\apply_filter.py" />
     <Compile Include="ch07\gradient_check.py" />
+    <Compile Include="ch07\im2col_sample.py" />
     <Compile Include="ch07\simple_convnet.py" />
     <Compile Include="ch07\train_convnet.py" />
     <Compile Include="ch07\visualize_filter.py" />
